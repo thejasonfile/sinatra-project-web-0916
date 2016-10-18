@@ -23,6 +23,11 @@ class RestaurantsController < ApplicationController
     erb :'restaurants/show'
   end
 
-
+  post '/restaurants/:id' do
+      restaurant = Restaurant.find(params[:id])
+      user = User.find_by(name: params[:user])
+      restaurant.users << user
+  redirect "/restaurants/#{restaurant[:id]}"
+  end
 
 end
