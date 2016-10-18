@@ -8,8 +8,8 @@
     <h1>User</h1>
     Name: <%=@user.name%>
     <h2>Restaurants</h2>
-    <ul><%=@user.restaurants.each do |restaurant|%>
-      <li><a href= "/restaurants/#{restaurant.id}"><%=restaurant.name%></a></li>
+    <ul><% @user.restaurants.each do |restaurant| %>
+      <li><a href= "/restaurants/<%= restaurant.id %>"><%=restaurant.name%></a></li>
       <% end %></ul>
   </body>
 </html>

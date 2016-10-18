@@ -10,8 +10,8 @@
     Address: <%=@restaurant.address%><br>
 
     <h2> People who may want to try it</h2>
-    <ul><%@restaurant.users.each do |user| %>
-      <li><a href="/users/#{user.id}"><%= user.name %></a></li>
+    <ul><%@users.each do |user| %>
+      <li><a href="/users/<%=user.id%>"><%= user.name %></a></li>
     <% end %></ul>
 
     <form class="" action="/restaurants/<%= @restaurant.id %>" method="post">
