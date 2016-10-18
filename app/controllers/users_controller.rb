@@ -1,11 +1,11 @@
 class UsersController < ApplicationController
 
-  get '/users/index' do
+  get '/users' do
     @users = User.all
     erb :'users/index'
   end
 
-  get 'users/:id' do
+  get '/users/:id' do
     @user = User.find
   end
 
