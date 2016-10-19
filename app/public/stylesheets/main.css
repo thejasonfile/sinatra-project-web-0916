@@ -66,3 +66,12 @@ button {
 .delete_btn {
   background-color: red;
 }
+
+.left-col {
+  width: 100px;
+  float: left;
+}
+
+.right-col {
+  float: right;
+}
