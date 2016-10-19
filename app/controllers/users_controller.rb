@@ -24,13 +24,13 @@ class UsersController < ApplicationController
     erb :'users/edit'
   end
 
-  post '/users/:id' do
+  patch '/users/:id' do
     user = User.find(params[:id])
     user.update(params[:user])
     redirect "users/#{user[:id]}"
   end
 
-  post '/users/:id/delete' do
+  delete '/users/:id/delete' do
     user = User.find(params[:id])
     user.destroy
     redirect '/users'

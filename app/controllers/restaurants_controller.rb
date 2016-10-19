@@ -34,13 +34,13 @@ class RestaurantsController < ApplicationController
     erb :'restaurants/edit'
   end
 
-  post '/restaurants/:id' do
+  patch '/restaurants/:id' do
     restaurant = Restaurant.find(params[:id])
     restaurant.update(params[:restaurant])
     redirect "/restaurants/#{restaurant[:id]}"
   end
 
-  post '/restaurants/:id/delete' do
+  delete '/restaurants/:id/delete' do
     restaurant = Restaurant.find(params[:id])
     restaurant.delete
     redirect '/restaurants'
