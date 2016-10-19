@@ -5,8 +5,5 @@ restaurants/show
   - user is still in list after being added to the restaurant
 
 
-
 Features
-- destroy users
-- destroy restaurants
 - Yelp API

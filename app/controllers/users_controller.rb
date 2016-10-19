@@ -30,5 +30,10 @@ class UsersController < ApplicationController
     redirect "users/#{user[:id]}"
   end
 
+  post '/users/:id/delete' do
+    user = User.find(params[:id])
+    user.destroy
+    redirect '/users'
+  end
 
 end

@@ -40,4 +40,10 @@ class RestaurantsController < ApplicationController
     redirect "/restaurants/#{restaurant[:id]}"
   end
 
+  post '/restaurants/:id/delete' do
+    restaurant = Restaurant.find(params[:id])
+    restaurant.delete
+    redirect '/restaurants'
+  end
+
 end

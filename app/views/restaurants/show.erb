@@ -21,5 +21,12 @@ Address: <%=@restaurant.address%><br>
   <input type="submit" value="Submit">
 </form>
 
-<p><a href="/restaurants/<%= @restaurant.id %>/edit"><button>Edit</button></a></p>
+<p>
+  <a href="/restaurants/<%= @restaurant.id %>/edit"><button>Edit User</button></a>
+
+  <form action="/restaurants/<%= @restaurant.id %>/delete" method="post">
+    <input id="hidden" type="hidden" name="_method" value="delete">
+    <input type="submit" value="Delete User">
+  </form>
+</p>
 
