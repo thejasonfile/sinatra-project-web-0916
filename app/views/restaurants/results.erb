@@ -1,6 +1,6 @@
-<h1>All Restaurants</h1>
+<h1>Restaurants</h1>
 
 
-  <ul><% @restaurants.each do |restaurant| %>
+  <ul><% @results.each do |restaurant| %>
   <li><a href="/restaurants/<%=restaurant.id%>"><%=restaurant.name%></a></li>
   <% end%></ul>
