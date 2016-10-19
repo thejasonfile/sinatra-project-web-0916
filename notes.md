@@ -1,14 +1,12 @@
 Bugs
 
 restaurants/show
-  - all users are added to 'people who might like it' when a new restaurant is created
+  - you can add user more than once to a restaurant
+  - user is still in list after being added to the restaurant
 
 
 
 Features
-- edit restaurants
-- update users
-- update restaurants
 - destroy users
 - destroy restaurants
 - Yelp API

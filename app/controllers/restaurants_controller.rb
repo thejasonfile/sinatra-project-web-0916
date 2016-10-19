@@ -13,7 +13,6 @@ class RestaurantsController < ApplicationController
 
   post '/restaurants' do
     restaurant = Restaurant.create(params)
-    # binding.pry
     redirect "/restaurants/#{restaurant[:id]}"
   end
 
