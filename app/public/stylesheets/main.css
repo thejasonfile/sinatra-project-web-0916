@@ -2,8 +2,36 @@
   text-align: center
 }
 
+a {
+  font-size: 1.4rem;
+  color: black;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
 li {
   list-style: none;
+}
+
+ul {
+  padding: 0;
+}
+
+label {
+  font-size: 1.4rem;
+}
+
+input[type="text"] {
+  padding: 0.4rem;
+  font-size: 1.4rem;
+  border-radius: 15px;
+}
+
+input[type="submit"],
+button {
+  font-size: 1.8rem;
 }
 
 #nav li {
@@ -25,21 +53,6 @@ li {
 
 .fa.fa-cutlery {
   font-size: 3rem;
-}
-
-label {
-  font-size: 1.4rem;
-}
-
-input[type="text"] {
-  padding: 0.4rem;
-  font-size: 1.4rem;
-  border-radius: 15px;
-}
-
-input[type="submit"],
-button {
-  font-size: 1.8rem;
 }
 
 .submit_btn {
