@@ -2,13 +2,24 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <link rel="stylesheet" type="text/css" href="/stylesheets/main.css" />
+  <script src="https://use.fontawesome.com/b25cebe01f.js"></script>
   <title></title>
 </head>
 <body>
-  <a href="/restaurants/new">Add a Restaurant</a>
-  <a href="/users/new">Add a User</a>
-  <a href="/users">See All Users</a>
-  <a href="/restaurants">See All Restaurants</a>
+  <div class="container">
+    <div id="nav">
+      <ul>
+        <i class="fa fa-cutlery" aria-hidden="true"></i>
+        <li><a href="/restaurants/new">Add a Restaurant</a></li>
+        <li><a href="/users/new">Add a User</a></li>
+        <li><a href="/users">See All Users</a></li>
+        <li><a href="/restaurants">See All Restaurants</a></li>
+        <i class="fa fa-cutlery" aria-hidden="true"></i>
+      </ul>
+      <hr />
+    </div>
   <%= yield %>
+  </div><!--.container-->
 </body>
 </html>

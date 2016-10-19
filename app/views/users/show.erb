@@ -8,11 +8,11 @@ Name: <%=@user.name%>
   <% end %>
 </ul>
 
-<a href="/users/<%= @user[:id] %>/edit"><button>Edit User</button></a>
+<a href="/users/<%= @user[:id] %>/edit"><button class="edit_btn">Edit User</button></a>
 
 <p>
   <form action="/users/<%= @user.id %>/delete" method="post">
     <input id="hidden" type="hidden" name="_method" value="delete">
-    <input type="submit" value="Delete User">
+    <input class="delete_btn" type="submit" value="Delete User">
   </form>
 </p>

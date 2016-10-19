@@ -1,5 +1,3 @@
-require 'pry'
-
 class RestaurantsController < ApplicationController
 
   get '/restaurants' do
@@ -25,9 +23,9 @@ class RestaurantsController < ApplicationController
     erb :"/restaurants/index"
   end
 
-  get '/restaurants/:id' do
+  get '/restaurants/:slug' do
     @users = User.all
-    @restaurant = Restaurant.find(params[:id])
+    @restaurant = Restaurant.find_by_slug(params[:slug])
     erb :'restaurants/show'
   end
 

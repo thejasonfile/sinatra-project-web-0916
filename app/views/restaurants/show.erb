@@ -1,31 +1,42 @@
 <h1> Restaurant</h1>
 
-Name: <%=@restaurant.name%><br>
-Rating: <%=@restaurant.rating%><br>
-Address: <%=@restaurant.address%><br>
+  <h3>Name: <%=@restaurant.name%></h3>
+  <p>Rating: <%=@restaurant.rating%></p>
+  <p>Address: <%=@restaurant.address%></p>
 
-<h2> People who may want to try it</h2>
+  <iframe
+    width="600"
+    height="450"
+    frameborder="0" style="border:0"
+    src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBYV-lwaMb8p0Hz04ILnsVSvHDZD2pZ7rc
+      &q=<%=@restaurant.address%>" allowfullscreen>
+  </iframe>
 
-<ul>
-  <% @restaurant.users.each do |user| %>
-  <li><a href="/users/<%= user.id %>"><%= user.name %></a></li>
-  <% end %>
-</ul>
+  <h2> People who may want to try it</h2>
 
-<form class="" action="/restaurants/<%= @restaurant.id %>/adduser" method="get">
-  <select name="user">
-    <%@users.each do |user| %>
-      <option value="<%=user.name %>"><%=user.name%></option>
-    <%end%>
-  </select>
-  <input type="submit" value="Submit">
-</form>
+  <ul>
+    <% @restaurant.users.each do |user| %>
+    <li><a href="/users/<%= user.id %>"><%= user.name %></a></li>
+    <% end %>
+  </ul>
 
-<p>
-  <a href="/restaurants/<%= @restaurant.id %>/edit"><button>Edit Restaurant</button></a>
-
-  <form action="/restaurants/<%= @restaurant.id %>/delete" method="post">
-    <input id="hidden" type="hidden" name="_method" value="delete">
-    <input type="submit" value="Delete Restaurant">
+  <form class="" action="/restaurants/<%= @restaurant.id %>/adduser" method="get">
+    <select name="user">
+      <%@users.each do |user| %>
+        <option value="<%=user.name %>"><%=user.name%></option>
+      <%end%>
+    </select>
+    <input class="submit" type="submit" value="Submit">
   </form>
-</p>
+
+  <p>
+    <a href="/restaurants/<%= @restaurant.id %>/edit"><button class="edit_btn">Edit Restaurant</button></a>
+
+    <form action="/restaurants/<%= @restaurant.id %>/delete" method="post">
+      <input id="hidden" type="hidden" name="_method" value="delete">
+      <input class="delete_btn" type="submit" value="Delete Restaurant">
+    </form>
+  </p>
+
+
+>>>>>>> 6eb0ba45563235f734c8bb1bbb7718d5d6862350
