@@ -12,7 +12,7 @@ Address: <%=@restaurant.address%><br>
   <% end %>
 </ul>
 
-<form class="" action="/restaurants/<%= @restaurant.id %>/adduser" method="post">
+<form class="" action="/restaurants/<%= @restaurant.id %>/adduser" method="get">
   <select name="user">
     <%@users.each do |user| %>
       <option value="<%=user.name %>"><%=user.name%></option>
@@ -29,4 +29,3 @@ Address: <%=@restaurant.address%><br>
     <input type="submit" value="Delete Restaurant">
   </form>
 </p>
-

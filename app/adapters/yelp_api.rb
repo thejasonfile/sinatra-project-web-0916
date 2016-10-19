@@ -1,3 +1,5 @@
+require 'pry'
+
 class YelpApi
 
 
@@ -14,12 +16,21 @@ class YelpApi
 
 
   def self.search(location, cuisine)
-
+  # Restaurant.clear_search
    results = client.search(location,cuisine)
    results.businesses.map do |result|
-     res = Restaurant.create({name: result.name, rating: result.rating, address: result.location.address.join(", ")})
-    #  Restaurant.search << res
-   end
+     Restaurant.find_or_create_by({name: result.name, rating: result.rating, address: result.location.address.join(", ")})
+   end 
+
  end
+  #  results.businesses.map do |result|
+  #  restaurant = Restaurant.find_or_create_by({name: result.name, rating: result.rating, address: result.location.address.join(", ")})
+# binding.pry
+  #  Restaurant.add_search(restaurant)
+  #  binding.pry
+  #  end
+
+    #  array
+
 
  end

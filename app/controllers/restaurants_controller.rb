@@ -3,8 +3,11 @@ require 'pry'
 class RestaurantsController < ApplicationController
 
   get '/restaurants' do
-    @restaurants = Restaurant.all
-    # binding.pry
+    if params[:city] && params[:cuisine]
+      @results = YelpApi.search(params[:city],{term: params[:cuisine]})
+    else
+      @results = Restaurant.all
+    end
     erb :'restaurants/index'
   end
 
@@ -17,16 +20,9 @@ class RestaurantsController < ApplicationController
     redirect "/restaurants/#{restaurant[:id]}"
   end
 
-  post '/restaurants/search' do
-    location = params[:city]
-    food = params[:cuisine]
-    YelpApi.search(location,{term: food})
-    redirect "/restaurants/results"
-  end
-
-  get '/restaurants/results' do
-    @results = Restaurant.find_by_sql('select name, id from restaurants order by id Desc limit 20')
-    erb :'restaurants/results'
+  get '/restaurants/search' do
+    @results= YelpApi.search(params[:city],{term: params[:cuisine]})
+    erb :"/restaurants/index"
   end
 
   get '/restaurants/:id' do
