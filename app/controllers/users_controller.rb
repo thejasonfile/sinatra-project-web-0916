@@ -19,7 +19,16 @@ class UsersController < ApplicationController
     erb :'users/show'
   end
 
+  get '/users/:id/edit' do
+    @user = User.find(params[:id])
+    erb :'users/edit'
+  end
 
+  post '/users/:id' do
+    user = User.find(params[:id])
+    user.update(params[:user])
+    redirect "users/#{user[:id]}"
+  end
 
 
 end

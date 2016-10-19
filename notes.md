@@ -6,6 +6,9 @@ restaurants/show
 
 
 Features
-- update
-- edit
+- edit restaurants
+- update users
+- update restaurants
+- destroy users
+- destroy restaurants
 - Yelp API
