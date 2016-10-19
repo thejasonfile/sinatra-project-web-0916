@@ -18,13 +18,12 @@ class RestaurantsController < ApplicationController
 
   post '/restaurants/search' do
     @yelp = Yelp.client.search(params[:city], params[:options])
-    @business_info = @yelp.businesses.each_with_object(Array.new) do |business , array|
-      array << business.name
-      array << business.rating
-      array << business.location.display_address
-    end
-    binding.pry
-    redirect "/restaurants/:id"
+    # @business_info = @yelp.businesses.each_with_object([]) do |business , array|
+    #   array << business.name
+    #   array << business.rating
+    #   array << business.location.display_address
+    # end
+    redirect "/restaurants"
   end
 
   get '/restaurants/:id' do
