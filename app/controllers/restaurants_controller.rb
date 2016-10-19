@@ -30,7 +30,6 @@ class RestaurantsController < ApplicationController
   get '/restaurants/:slug' do
     @users = User.all
     @restaurant = Restaurant.find_by_slug(params[:slug])
-    binding.pry
     erb :'restaurants/show'
   end
 
