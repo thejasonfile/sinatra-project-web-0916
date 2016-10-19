@@ -27,9 +27,10 @@ class RestaurantsController < ApplicationController
     erb :'restaurants/results'
   end
 
-  get '/restaurants/:id' do
+  get '/restaurants/:slug' do
     @users = User.all
-    @restaurant = Restaurant.find(params[:id])
+    @restaurant = Restaurant.find_by_slug(params[:slug])
+    binding.pry
     erb :'restaurants/show'
   end
 
