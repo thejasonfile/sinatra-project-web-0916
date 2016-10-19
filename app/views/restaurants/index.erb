@@ -1,7 +1,8 @@
 <h1>All Restaurants</h1>
 
 <ul>
-  <% @restaurants.each do |restaurant| %>
-    <li><a href="/restaurants/<%= restaurant.id %>"><%= restaurant.name %></a></li>
+  <% @yelp.businesses.map do |business| %>
+    <a href="/restaurants/"><li><%= business.name %></li></a>
   <% end %>
 </ul>
+
