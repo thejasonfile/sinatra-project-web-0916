@@ -13,11 +13,11 @@ class YelpApi
 
 
 
-  def self.search(location)
+  def self.search(location, cuisine)
 
-   results = client.search(location,{term: 'food'})
+   results = client.search(location,cuisine)
    results.businesses.map do |result|
-     res = Restaurant.create({name: result.name, address: result.location.address.join(", ")})
+     res = Restaurant.create({name: result.name, rating: result.rating, address: result.location.address.join(", ")})
     #  Restaurant.search << res
    end
  end

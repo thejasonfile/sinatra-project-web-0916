@@ -4,8 +4,6 @@ class RestaurantsController < ApplicationController
 
   get '/restaurants' do
     @restaurants = Restaurant.all
-
-    @results = Restaurant.find_by_sql('select name, id from restaurants order by id Desc limit 20')
     # binding.pry
     erb :'restaurants/index'
   end
@@ -20,9 +18,15 @@ class RestaurantsController < ApplicationController
   end
 
   post '/restaurants/search' do
-    search = params[:city]
-    YelpApi.search(search)
-    redirect "/restaurants"
+    location = params[:city]
+    food = params[:cuisine]
+    YelpApi.search(location,{term: food})
+    redirect "/restaurants/results"
+  end
+
+  get '/restaurants/results' do
+    @results = Restaurant.find_by_sql('select name, id from restaurants order by id Desc limit 20')
+    erb :'restaurants/results'
   end
 
   get '/restaurants/:id' do
