@@ -18,15 +18,15 @@ Address: <%=@restaurant.address%><br>
       <option value="<%=user.name %>"><%=user.name%></option>
     <%end%>
   </select>
-  <input type="submit" value="Submit">
+  <input class="submit" type="submit" value="Submit">
 </form>
 
 <p>
-  <a href="/restaurants/<%= @restaurant.id %>/edit"><button>Edit Restaurant</button></a>
+  <a href="/restaurants/<%= @restaurant.id %>/edit"><button class="edit_btn">Edit Restaurant</button></a>
 
   <form action="/restaurants/<%= @restaurant.id %>/delete" method="post">
     <input id="hidden" type="hidden" name="_method" value="delete">
-    <input type="submit" value="Delete Restaurant">
+    <input class="delete_btn" type="submit" value="Delete Restaurant">
   </form>
 </p>
 
