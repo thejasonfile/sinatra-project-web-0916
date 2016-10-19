@@ -1,5 +1,3 @@
-require 'pry'
-
 class RestaurantsController < ApplicationController
 
   get '/restaurants' do
@@ -17,13 +15,7 @@ class RestaurantsController < ApplicationController
   end
 
   post '/restaurants/search' do
-    #the yelp data needs to get in to the database
     yelp = Yelp.client.search(params[:city], params[:options])
-    # @business_info = @yelp.businesses.each_with_object([]) do |business , array|
-    #   array << business.name
-    #   array << business.rating
-    #   array << business.location.display_address
-    # end
     redirect "/restaurants"
   end
 
