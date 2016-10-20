@@ -13,6 +13,6 @@
 </form>
 
   <ul><% @restaurants.each do |restaurant| %>
-  <li><a href="/restaurants/<%=restaurant.slug%>"><%=restaurant.name%></a></li>
+  <li><a href="/restaurants/<%=restaurant.slug%>"><%=restaurant.name%> - <span class="font_sm font_em"><%=restaurant.city%></span></a></li>
 
   <% end%></ul>

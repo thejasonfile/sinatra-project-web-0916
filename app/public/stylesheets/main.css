@@ -67,11 +67,10 @@ button {
   background-color: red;
 }
 
-.left-col {
-  width: 100px;
-  float: left;
+.font_sm {
+  font-size: 1.4rem;
 }
 
-.right-col {
-  float: right;
+.font_em {
+  font-style: italic;
 }

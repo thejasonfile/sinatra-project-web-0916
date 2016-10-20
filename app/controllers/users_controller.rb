@@ -6,7 +6,6 @@ class UsersController < ApplicationController
   end
 
   post '/users' do
-    binding.pry
     user = User.create(params)
     redirect "users/#{user.slug}"
   end

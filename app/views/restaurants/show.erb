@@ -2,14 +2,15 @@
 
   <h3>Name: <%=@restaurant.name%></h3>
   <p>Rating: <%=@restaurant.rating%></p>
-  <p>Address: <%=@restaurant.address%></p>
+  <p>Address: <%=@restaurant.address%>, <%=@restaurant.city%></p>
+  <p>Website: <a href="<%=@restaurant.url%>">Click here</a></p>
 
   <iframe
     width="600"
     height="450"
     frameborder="0" style="border:0"
     src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBYV-lwaMb8p0Hz04ILnsVSvHDZD2pZ7rc
-      &q=<%=@restaurant.address%>" allowfullscreen>
+      &q=<%=@restaurant.city%>+<%=@restaurant.address%>" allowfullscreen>
   </iframe>
 
   <h2> People who may want to try it</h2>
