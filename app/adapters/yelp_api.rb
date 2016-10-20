@@ -8,18 +8,15 @@ class YelpApi
                             token: 'yugpiz4g7pXYPUekjlCtG1CUC_cvbVWr',
                             token_secret: 'abai6D7EY6SB8lfsvVgIdqRfhX4'
                           })
-
   end
 
 
 
   def self.search(location, cuisine)
-
-   results = client.search(location,cuisine)
-   results.businesses.map do |result|
-     res = Restaurant.create({name: result.name, rating: result.rating, address: result.location.address.join(", ")})
-    #  Restaurant.search << res
-   end
- end
-
- end
+    binding.pry
+    results = client.search(location,cuisine)
+    results.businesses.map do |result|
+      res = Restaurant.create({name: result.name, rating: result.rating, address: result.location.address.join(", ")})
+    end
+  end
+end

@@ -2,7 +2,6 @@ class RestaurantsController < ApplicationController
 
   get '/restaurants' do
     @restaurants = Restaurant.all
-    # binding.pry
     erb :'restaurants/index'
   end
 
