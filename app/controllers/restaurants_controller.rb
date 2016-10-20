@@ -15,7 +15,7 @@ class RestaurantsController < ApplicationController
 
   post '/restaurants' do
     restaurant = Restaurant.create(params)
-    redirect "/restaurants/#{restaurant[:id]}"
+    redirect "/restaurants/#{restaurant.slug}"
   end
 
   get '/restaurants/search' do
@@ -33,7 +33,7 @@ class RestaurantsController < ApplicationController
       restaurant = Restaurant.find(params[:id])
       user = User.find_by(name: params[:user])
       restaurant.users << user
-  redirect "/restaurants/#{restaurant[:id]}"
+  redirect "/restaurants/#{restaurant.slug}"
   end
 
   get '/restaurants/:id/edit' do
@@ -44,7 +44,7 @@ class RestaurantsController < ApplicationController
   patch '/restaurants/:id' do
     restaurant = Restaurant.find(params[:id])
     restaurant.update(params[:restaurant])
-    redirect "/restaurants/#{restaurant[:id]}"
+    redirect "/restaurants/#{restaurant.slug}"
   end
 
   delete '/restaurants/:id/delete' do
