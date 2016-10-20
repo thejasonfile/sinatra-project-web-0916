@@ -1,6 +1,18 @@
 <h1>All Restaurants</h1>
-
+<h3>Search Yelp for a Cuisine in Your City</h3>
+<form action="/restaurants" method="get">
+  <p>
+  <label for="city">City: </label>
+  <input type="text" name="city" id="city"/>
+  </p>
+  <p>
+  <label for="cuisine">Cuisine: </label>
+  <input type="text" name="cuisine" id="cuisine"/>
+  </p>
+  <input type="submit" value="Submit">
+</form>
 
   <ul><% @restaurants.each do |restaurant| %>
   <li><a href="/restaurants/<%=restaurant.slug%>"><%=restaurant.name%></a></li>
+
   <% end%></ul>
