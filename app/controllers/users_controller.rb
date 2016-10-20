@@ -6,8 +6,9 @@ class UsersController < ApplicationController
   end
 
   post '/users' do
+    binding.pry
     user = User.create(params)
-    redirect "users/#{user[:id]}"
+    redirect "users/#{user.slug}"
   end
 
   get '/users/new' do
@@ -27,7 +28,7 @@ class UsersController < ApplicationController
   patch '/users/:id' do
     user = User.find(params[:id])
     user.update(params[:user])
-    redirect "users/#{user[:id]}"
+    redirect "users/#{user.slug}"
   end
 
   delete '/users/:id/delete' do
