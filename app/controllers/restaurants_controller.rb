@@ -24,15 +24,17 @@ class RestaurantsController < ApplicationController
   end
 
   get '/restaurants/:slug' do
-    @users = User.all
     @restaurant = Restaurant.find_by_slug(params[:slug])
+    @valid_users = User.all - @restaurant.users
     erb :'restaurants/show'
   end
 
   post '/restaurants/:id/adduser' do
       restaurant = Restaurant.find(params[:id])
       user = User.find_by(name: params[:user])
-      restaurant.users << user
+      if !restaurant.users.include?(user)
+        restaurant.users << user
+      end
   redirect "/restaurants/#{restaurant.slug}"
   end
 
