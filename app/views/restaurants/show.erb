@@ -20,7 +20,7 @@
     <% end %>
   </ul>
 
-  <form class="" action="/restaurants/<%= @restaurant.id %>/adduser" method="get">
+  <form action="/restaurants/<%= @restaurant.id %>/adduser" method="post">
     <select name="user">
       <%@users.each do |user| %>
         <option value="<%=user.name %>"><%=user.name%></option>
@@ -37,6 +37,3 @@
       <input class="delete_btn" type="submit" value="Delete Restaurant">
     </form>
   </p>
-
-
->>>>>>> 6eb0ba45563235f734c8bb1bbb7718d5d6862350
