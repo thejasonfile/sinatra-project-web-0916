@@ -1,6 +1,6 @@
 class ApplicationController < Sinatra::Base
   register Sinatra::ActiveRecordExtension
   set(:views, 'app/views')
-  set(:public, 'app/public')
+  set(:public_folder, 'app/public')
 end
 
