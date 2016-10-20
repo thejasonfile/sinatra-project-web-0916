@@ -2,9 +2,9 @@ class RestaurantsController < ApplicationController
 
   get '/restaurants' do
     if params[:city] && params[:cuisine]
-      @results = YelpApi.search(params[:city],{term: params[:cuisine]})
+      @restaurants = YelpApi.search(params[:city],{term: params[:cuisine]})
     else
-      @results = Restaurant.all
+      @restaurants = Restaurant.all
     end
     erb :'restaurants/index'
   end
